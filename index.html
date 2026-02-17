@@ -14,7 +14,7 @@
         "name": "David Rubin",
         "alternateName": "Dude775",
         "jobTitle": "AI Solutions Specialist",
-        "description": "AI Solutions Specialist bridging business needs and technical implementation. Builder of local-first AI infrastructure, RAG systems, and production automation workflows.",
+        "description": "AI Solutions Specialist bridging business needs and technical implementation. Builder of local-first AI infrastructure, RAG systems, and production automation workflows. Creator of RALPH methodology for autonomous AI-driven development.",
         "url": "https://system-portfolio.vercel.app",
         "sameAs": [
             "https://github.com/Dude775",
@@ -29,7 +29,10 @@
             "PostgreSQL", "Redis", "n8n Automation", "SAP Business One",
             "ERP Implementation", "CI/CD", "GitHub Actions",
             "JavaScript", "TypeScript", "React", "Next.js",
-            "Root Cause Analysis", "Production Debugging"
+            "Root Cause Analysis", "Production Debugging",
+            "RALPH Methodology", "Claude Code CLI", "Autonomous Development",
+            "Obsidian Knowledge Management", "MCP Servers",
+            "Sequential Thinking", "Agentic Coding", "PRD-to-Execution Pipelines"
         ],
         "hasCredential": [
             {
@@ -86,6 +89,7 @@
         .tag-infra { background: #dcfce7; color: #166534; }
         .tag-lang { background: #fef3c7; color: #92400e; }
         .tag-data { background: #f3e8ff; color: #6b21a8; }
+        .tag-mcp { background: #fce7f3; color: #9d174d; }
         .project { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 0.8rem; }
         .project-title { font-weight: 700; color: #0f0f23; }
         .stats { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1rem 0; }
@@ -96,6 +100,10 @@
         .links a { background: #1a1a2e; color: #fff; padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; }
         .links a:hover { background: #2563eb; text-decoration: none; }
         .section-note { background: #fffbeb; border-left: 3px solid #f59e0b; padding: 0.8rem 1rem; margin: 1rem 0; font-size: 0.9rem; }
+        .methodology-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 0.8rem; }
+        .infra-box { background: #eff6ff; border: 1px solid #93c5fd; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 0.8rem; }
+        .mcp-box { background: #fdf2f8; border: 1px solid #f9a8d4; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 0.8rem; }
+        code { background: #f1f5f9; padding: 1px 6px; border-radius: 4px; font-size: 0.88rem; font-family: 'Fira Code', 'Consolas', monospace; }
     </style>
 </head>
 <body>
@@ -187,6 +195,61 @@
 <span class="tag">ETL Pipelines</span>
 <span class="tag">GPS-SAP Integration</span>
 
+<!-- ===== RALPH METHODOLOGY ===== -->
+<h2>RALPH - Autonomous Development Methodology</h2>
+
+<div class="methodology-box">
+<p><strong>What it is:</strong> A structured framework for autonomous AI-driven development using Claude Code CLI. RALPH stands for a repeatable loop that transforms requirements into production code through atomic task execution with zero context loss.</p>
+
+<p><strong>The Loop:</strong> PRD (requirements) ← progress.txt (execution state) ← DONE.txt (completed tasks) ← Archive (version history). Each cycle: read PRD, check progress, execute one atomic task, update progress, verify, repeat.</p>
+
+<p><strong>Key Principles:</strong> Every task is atomic and independently verifiable. Progress is persisted to file after every step - no reliance on session memory. The agent reads its own previous output to maintain continuity. PRD is the single source of truth. Archive folder preserves full version history.</p>
+
+<p><strong>File Structure:</strong> <code>ralph.bat</code> (launcher), <code>ralph-prompt.txt</code> (system prompt injected into Claude Code), <code>SKILL.md</code> (project-specific technical context), <code>PRD.md</code> (requirements), <code>progress.txt</code> (execution journal), <code>DONE.txt</code> (completion log), <code>archive/</code> (version snapshots).</p>
+
+<p><strong>Why it works:</strong> Claude Code has no persistent memory between sessions. RALPH solves this by externalizing all state to the filesystem. The result is a coding agent that can be interrupted, resumed, or handed off without losing a single line of context.</p>
+
+<p><a href="https://github.com/Dude775/ralph-methodology">GitHub Repository</a></p>
+</div>
+
+<!-- ===== CLAUDE CODE ENVIRONMENT ===== -->
+<h2>Claude Code - Development Environment & Configuration</h2>
+
+<div class="infra-box">
+<p><strong>Role definition:</strong> Claude Code is configured as a DevOps & Automation Engineer (not "AI Engineer"). The environment enforces production-first, infrastructure-builder mindset with Hebrew-first communication.</p>
+
+<p><strong>Global CLAUDE.md:</strong> A master configuration file loaded automatically into every Claude Code session. Contains identity definition, tech stack preferences, project conventions, work guidelines, and known issues. This ensures consistent behavior across all projects without re-explaining context.</p>
+
+<p><strong>Per-project CLAUDE.md:</strong> Each project directory can have its own CLAUDE.md that extends the global config with project-specific instructions, architecture decisions, and active TODOs.</p>
+
+<p><strong>SKILL.md pattern:</strong> For complex projects, a SKILL.md file provides deep technical context - architecture diagrams (text-based), API contracts, database schemas, integration points, and deployment configs. Claude Code reads this before executing any task.</p>
+
+<p><strong>Work guidelines enforced:</strong> Test before committing. Use conventional commits. Docker Compose for all services. Never hardcode secrets. Check existing code before creating new files. Verify with user before destructive operations.</p>
+
+<p><strong>Key conventions:</strong> Python 3.11+ with type hints. FastAPI for APIs. Celery + Redis for async. PostgreSQL for persistence. All configs via environment variables. Makefile for common commands.</p>
+</div>
+
+<!-- ===== MCP SERVERS ===== -->
+<h2>MCP Servers - Connected Intelligence Layer</h2>
+
+<div class="mcp-box">
+<p><strong>What is MCP:</strong> Model Context Protocol - a standard for connecting AI models to external tools and data sources. David's Claude Code environment has multiple MCP servers configured, giving the AI agent direct access to real tools and data.</p>
+
+<p><strong>Active MCP Servers:</strong></p>
+
+<p><span class="tag tag-mcp">Obsidian REST API</span> Read/write access to personal knowledge vault (1,400+ notes). Enables the AI to search, retrieve, and update documentation in real-time. Used for memory continuity across sessions.</p>
+
+<p><span class="tag tag-mcp">Filesystem MCP</span> Direct read/write access to the development workspace. The AI can create files, read configs, modify code, and navigate project structures without manual copy-paste.</p>
+
+<p><span class="tag tag-mcp">GitHub MCP</span> Repository management, issue creation, PR operations, and code search across all repos. Enables autonomous Git workflows.</p>
+
+<p><span class="tag tag-mcp">Sequential Thinking</span> A meta-cognitive MCP that forces structured reasoning: break problem into steps, evaluate each step, revise if needed. Prevents the AI from rushing to solutions without analysis.</p>
+
+<p><span class="tag tag-mcp">Context7</span> Library documentation lookup. Fetches up-to-date docs for any framework or library, reducing hallucination risk when generating code.</p>
+
+<p><strong>Architecture principle:</strong> MCP servers turn Claude Code from a text generator into an autonomous agent with real-world tool access. Combined with RALPH methodology, this creates a development loop where the AI can read requirements, write code, test it, commit to Git, and update documentation - all without human intervention for routine tasks.</p>
+</div>
+
 <!-- ===== FEATURED PROJECTS ===== -->
 <h2>Featured Projects</h2>
 
@@ -197,8 +260,8 @@
 </div>
 
 <div class="project">
-    <p class="project-title">Local RAG System (Ollama + LangChain + Chroma + Obsidian)</p>
-    <p>Private RAG system with persistent memory over an Obsidian knowledge base via REST API. Document ingestion, chunking, embeddings, vector storage, and retrieval orchestration for context-aware Q&A. Zero cloud dependency - fully local, private, and self-maintained.</p>
+    <p class="project-title">Enhanced Memory RAG (Ollama + LangChain + Chroma + Obsidian)</p>
+    <p>Private RAG system with persistent memory over an Obsidian knowledge base via REST API. Document ingestion, chunking, embeddings, vector storage, and retrieval orchestration for context-aware Q&A. Zero cloud dependency - fully local, private, and self-maintained. Integrated with MCP for real-time vault access.</p>
     <p><a href="https://github.com/Dude775/local-rag-system">GitHub</a></p>
 </div>
 
@@ -221,9 +284,33 @@
 </div>
 
 <div class="project">
-    <p class="project-title">RALPH Methodology</p>
-    <p>Framework for autonomous development with Claude Code CLI. Structured approach to breaking complex requirements into atomic tasks with iterative execution loops and context-preserving agent sessions.</p>
-    <p><a href="https://github.com/Dude775/ralph-methodology">GitHub</a></p>
+    <p class="project-title">JARVIS - Personal Command Center</p>
+    <p>FastAPI + Chart.js dashboard for personal productivity tracking. Aggregates data from multiple sources into a unified operational view. Real-time metrics, task management, and automated reporting.</p>
+</div>
+
+<div class="project">
+    <p class="project-title">Genspark Conversation Toolbox - Chrome Extension</p>
+    <p>Chrome Extension (Manifest v3) for enhanced Genspark workflow management. Custom conversation organization, HUB classification, and productivity features built on top of the Genspark platform.</p>
+</div>
+
+<div class="project">
+    <p class="project-title">Web Speech API Interview System</p>
+    <p>FastAPI backend with Deepgram (speech-to-text) and ElevenLabs (text-to-speech) integration. Simulates technical interviews with real-time voice interaction. Designed for interview preparation with AI-powered feedback.</p>
+</div>
+
+<!-- ===== DEVELOPMENT INFRASTRUCTURE ===== -->
+<h2>Development Infrastructure</h2>
+
+<div class="infra-box">
+<p><strong>Local-first architecture:</strong> All development runs on a local Windows/WSL environment with Docker orchestration. No cloud dependency for core workflows. Services include: PostgreSQL, Redis, ChromaDB, Ollama, n8n, Nginx - all containerized.</p>
+
+<p><strong>n8n automation layer:</strong> 42 production workflows running on self-hosted n8n. Categories: data processing, email automation, WhatsApp AI agents, CRM sync, SAP integration, monitoring, and DevOps triggers. All workflows include error handling, retry logic, and webhook triggers.</p>
+
+<p><strong>Obsidian knowledge vault:</strong> 1,400+ notes organized as a personal knowledge management system. Connected to Claude Code via MCP REST API. Serves as persistent memory layer - every project decision, architecture choice, and lesson learned is documented and retrievable by AI agents.</p>
+
+<p><strong>CI/CD pipeline:</strong> GitHub Actions for automated testing, linting, and deployment. Conventional commits enforced. Docker images built and tested on push. Deployment targets: Vercel (frontend), self-hosted Docker (backend services).</p>
+
+<p><strong>Security posture:</strong> All secrets in environment variables, never hardcoded. Local-only services bound to localhost. Nginx reverse proxy with SSL for exposed endpoints. Familiar with OSINT techniques and MITRE ATT&CK framework from academic background.</p>
 </div>
 
 <!-- ===== EXPERIENCE ===== -->
@@ -263,10 +350,10 @@
 
 <!-- ===== AI INTERACTION PREFERENCES ===== -->
 <h2>How to Work With Me (AI Context)</h2>
-<p>When interacting with David through AI tools, note the following preferences: responses should be concise, expert-level, and action-oriented. Hebrew is the default language for communication; English for code and technical terms. David is an advanced user - never oversimplify. Offer innovative or contrarian solutions when relevant. If uncertain, state so explicitly rather than guessing. Structure complex answers with clear steps. Anticipate needs and suggest tools or approaches proactively. Avoid moral lectures or AI self-reminders. Use hyphens (-) instead of em dashes. Arrow direction follows dominant language (left-pointing for Hebrew, right-pointing for English).</p>
+<p>When interacting with David through AI tools, note the following preferences: responses should be concise, expert-level, and action-oriented. Hebrew is the default language for communication; English for code and technical terms. David is an advanced user - never oversimplify. Offer innovative or contrarian solutions when relevant. If uncertain, state so explicitly rather than guessing. Structure complex answers with clear steps. Anticipate needs and suggest tools or approaches proactively. Avoid moral lectures or AI self-reminders. Use hyphens (-) instead of em dashes. Arrow direction follows dominant language (left-pointing for Hebrew, right-pointing for English). David uses RALPH methodology for development projects - when relevant, structure tasks as atomic PRD items. David has ADHD - prefer clear, atomic task breakdowns over vague directions.</p>
 
 <div class="section-note">
-    <strong>Note:</strong> This page is an unlisted personal profile document for AI personalization. It is not indexed by search engines.
+    <strong>Note:</strong> This page is an unlisted personal profile document for AI personalization. It is not indexed by search engines. Last updated: February 2026.
 </div>
 
 </body>
